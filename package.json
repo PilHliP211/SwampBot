@@ -8,7 +8,13 @@
   "private": true,
   "dependencies": {
     "@google-cloud/compute": "^2.4.1",
+    "node": "^19.6.0",
     "slash-create": "^1.2.0",
-    "string-table": "^0.1.5"
+    "string-table": "^0.1.5",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "run": "node src/main.js"
   }
 }
