@@ -5,6 +5,7 @@ const compute = new Compute();
 
 const USER_ROLE_ID = process.env.USER_ROLE_ID;
 const DEFAULT_COMPUTE_ZONE = process.env.DEFAULT_COMPUTE_ZONE;
+const DISCORD_DEVELOPMENT_GUILD_ID = process.env.DISCORD_DEVELOPMENT_GUILD_ID;
 
 const PRESENT_VERBS = {
   start: "Starting",
@@ -18,10 +19,11 @@ const allowAllUsers = true;
 
 module.exports = class ServersCommand extends SlashCommand {
   constructor(creator) {
+    const guildID = DISCORD_DEVELOPMENT_GUILD_ID || process.env.DISCORD_GUILD_ID;
     super(creator, {
       name: 'servers',
       description: 'Interact with GCP Compute Engine Instances',
-      guildID: process.env.DISCORD_GUILD_ID,
+      guildID,
       options: [
         {
           name: 'list',
