@@ -12,6 +12,6 @@ steps:
   - deploy
   - swamp-bot-dev
   - --region=us-east1
-  - --source=.
+  - --source=dist
   - --trigger-http
   - --runtime=nodejs16
