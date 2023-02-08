@@ -15,5 +15,5 @@ steps:
   - swamp-bot-dev
   - --region=us-east1
   - --source=.
-  - --trigger-https
+  - --trigger-http
   - --runtime=nodejs16
