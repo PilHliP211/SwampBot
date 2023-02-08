@@ -4,7 +4,9 @@ steps:
   args: ['install']
 - name: node
   entrypoint: npm
-  args: ['run', 'build']
+  args:
+  - run
+  - build
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args:
   - gcloud
@@ -13,5 +15,5 @@ steps:
   - swamp-bot-dev
   - --region=us-east1
   - --source=.
-  - --trigger-http
+  - --trigger-https
   - --runtime=nodejs16
