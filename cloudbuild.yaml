@@ -1,12 +1,10 @@
 steps:
-- name: node
+- name: node:18
   entrypoint: npm
   args: ['install']
-- name: node
+- name: node:18
   entrypoint: npm
-  args:
-  - run
-  - build
+  args: ['run', 'build']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args:
   - gcloud
@@ -14,6 +12,5 @@ steps:
   - deploy
   - swamp-bot-dev
   - --region=us-east1
-  - --source=.
   - --trigger-http
-  - --runtime=nodejs16
+  - --runtime=nodejs18
