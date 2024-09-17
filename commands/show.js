@@ -13,7 +13,7 @@ module.exports = class ServersCommand extends SlashCommand {
           name: 'baby',
           description: 'Pictures of baby',
           type: CommandOptionType.SUB_COMMAND
-        }
+        },
       ]
     });
   }
@@ -26,7 +26,8 @@ module.exports = class ServersCommand extends SlashCommand {
     if (subcommand == "baby" && (ctx.member.roles.includes(USER_ROLE_ID)|| true)) {
       console.log('baby...');
       await ctx.acknowledge(true);
-      ctx.send("pong");
+      const imageUrl = 'https://pilhlip.com/winton.jpg'
+      ctx.send({ content: 'Here is baby:', files: [imageUrl] })
     }
     else {
       console.log("Unrecognized Command or Insufficient Permissions");
