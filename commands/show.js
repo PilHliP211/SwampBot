@@ -23,7 +23,7 @@ module.exports = class ServersCommand extends SlashCommand {
     var subcommand = ctx.subcommands[0];
     console.log('subcommand:' + subcommand);
 
-    if (subcommand == "baby" && (ctx.member.roles.includes(USER_ROLE_ID))) {
+    if (subcommand == "baby" && (ctx.member.roles.includes(USER_ROLE_ID)|| true)) {
       console.log('baby...');
       await ctx.acknowledge(true);
       ctx.send("pong");
