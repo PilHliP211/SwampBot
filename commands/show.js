@@ -27,7 +27,7 @@ module.exports = class ServersCommand extends SlashCommand {
       console.log('baby...');
       await ctx.acknowledge(true);
       const imageUrl = 'https://pilhlip.com/winton.jpg'
-      ctx.send({ content: 'Here is baby:', files: [imageUrl] })
+      ctx.send({ content: 'Here is baby:', embeds: [{image: {url: imageUrl}}] })
     }
     else {
       console.log("Unrecognized Command or Insufficient Permissions");
